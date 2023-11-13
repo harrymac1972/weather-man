@@ -9,7 +9,7 @@ main {
 }
 
 .future-card {
-    background-color: black;
+    background-color: #323D4F;
     color: white;
     margin: 0.25em;
     min-width: 10vw;
@@ -17,12 +17,6 @@ main {
 
 .search-current-el {
     margin: 0.5rem;
-}
-
-#search-current {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid grey;
 }
 
 #future-days {
@@ -33,6 +27,18 @@ main {
 
 #header-div {
     text-align: center;
-    background-color: darkblue;
+    background: linear-gradient(to right, #465AB8, #261360);
     color: white;
+}
+
+#results-current {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+}
+
+#search-current {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid grey;
 }
