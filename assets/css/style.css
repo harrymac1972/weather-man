@@ -1,6 +1,11 @@
 * {
-    padding:0.25em;
-    margin:0.25em;
+    padding: .25em;
+    margin: .25em;
+}
+
+button {
+    margin: .25rem;
+    border-radius: .375rem;
 }
 
 main {
@@ -9,7 +14,7 @@ main {
 }
 
 .future-card {
-    background-color: black;
+    background-color: #323D4F;
     color: white;
     margin: 0.25em;
     min-width: 10vw;
@@ -19,13 +24,45 @@ main {
     margin: 0.5rem;
 }
 
-#search-current {
-    display: flex;
-    flex-direction: column;
-}
-
 #future-days {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+#header-div {
+    text-align: center;
+    background: linear-gradient(to right, #465AB8, #261360);
+    color: white;
+}
+
+#results-current {
+    border: 2px solid #AEAEAE;
+}
+
+#results-fine {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-btn {
+    background-color: #6991E3;
+}
+
+#search-current {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid grey;
+}
+
+#search-history {
+    display: flex;
+    flex-direction: column;
+}
+
+#current-header-div {
+    display: flex;
+    flex-direction: row;
+}
+
+
