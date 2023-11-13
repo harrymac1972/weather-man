@@ -22,10 +22,17 @@ main {
 #search-current {
     display: flex;
     flex-direction: column;
+    border-bottom: 2px solid grey;
 }
 
 #future-days {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#header-div {
+    text-align: center;
+    background-color: darkblue;
+    color: white;
 }
