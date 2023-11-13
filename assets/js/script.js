@@ -158,6 +158,18 @@ function searchCity(cityStr) {
     }
 }
 
+function handleKeyDown(event) {
+    if (event.keyCode === 13) {
+      var enterEvent = new KeyboardEvent('keydown', {
+        key: 'Enter',
+        keyCode: 13,
+        bubbles: true,
+        cancelable: true,
+      });
+      $('#myInput').dispatchEvent(enterEvent);
+    }
+  }
+
 function setStoredHistory(searchedArr) {
     var searchedArrStr = JSON.stringify(searchedArr);
     localStorage.setItem('cityHistory', searchedArrStr);
