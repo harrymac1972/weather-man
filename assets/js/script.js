@@ -96,7 +96,7 @@ function renderForecastDataDay(data,ix,incr) {
 function renderForecastDatahumidity(data,ix,incr) {
     var dew = data.list[incr].main.humidity;
     var ele = "#day-" + ix + "-humidity";
-    var humidity = "humidity: " + dew + ' %';
+    var humidity = "Humidity: " + dew + ' %';
     $(ele).text(humidity);
 }
 
