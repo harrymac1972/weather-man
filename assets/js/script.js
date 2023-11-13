@@ -1,30 +1,24 @@
 
 var searchedArr = [];
 
-$("#search-btn").on("click",function() {
-    var cityStr = $("#search-inp").val();
-    searchCity(cityStr);
-})
-
-function searchCity(cityStr) {
-    cityStr = toTitleCase(cityStr);
-    if (cityStr.length > 0){
-        var urlString = "https://api.openweathermap.org/data/2.5/weather?q=";
-        urlString += cityStr;
-        urlString += "&APPID=0bf264ae251f7110c36368067c1f04d7&units=metric";
-        $.ajax({
-            url: urlString,
-            method: "GET",
-            dataType: "json",
-            success: function(data) {
-                cityFound(cityStr,searchedArr,data);
-            },
-            error: function() {
-                alert("City Not Found!");
-            }
-        })
+function _init() {
+    var historyArr = getStoredHistory();
+    if (localStorage.getItem("cityHistory") === null) {
+        searchCity("Toronto");
+    } else {
+        renderHistory(historyArr);
+        searchCity(historyArr[0]);
     }
 }
+
+
+
+
+// if (localStorage.getItem(keyToCheck) === null) {
+//     console.log(`The key '${keyToCheck}' is not present in local storage`);
+//   } else {
+//     console.log(`The key '${keyToCheck}' is present in local storage`);
+//   }
 
 function cityFound(cityStr,searchedArr,data) {
     renderCurrentHeader(data);
@@ -46,6 +40,11 @@ function cropHistory(searchedArr) {
         searchedArr.pop();
     }
     return searchedArr;
+}
+
+function getStoredHistory() {
+    var historyJSONStr = localStorage.getItem("cityHistory");
+    return JSON.parse(historyJSONStr);
 }
 
 function renderCurrentHeader(data) {
@@ -141,8 +140,43 @@ function renderHistory(searchedArr) {
             searchCity(btnStr);
         });
     }
+    setStoredHistory(searchedArr);
+}
+
+function searchCity(cityStr) {
+    cityStr = toTitleCase(cityStr);
+    if (cityStr.length > 0){
+        var urlString = "https://api.openweathermap.org/data/2.5/weather?q=";
+        urlString += cityStr;
+        urlString += "&APPID=0bf264ae251f7110c36368067c1f04d7&units=metric";
+        $.ajax({
+            url: urlString,
+            method: "GET",
+            dataType: "json",
+            success: function(data) {
+                console.log(searchedArr);
+                cityFound(cityStr,searchedArr,data);
+            },
+            error: function() {
+                alert("City Not Found!");
+            }
+        })
+    }
+}
+
+function setStoredHistory(searchedArr) {
+    var searchedArrStr = JSON.stringify(searchedArr);
+    localStorage.setItem('cityHistory', searchedArrStr);
 }
 
 function toTitleCase(textStr) {
     return textStr.charAt(0).toUpperCase() + textStr.slice(1);
 }
+
+$("#search-btn").on("click",function() {
+    var cityStr = $("#search-inp").val();
+    searchCity(cityStr);
+})
+
+
+_init();
