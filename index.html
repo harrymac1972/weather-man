@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Man</title>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/cupertino/jquery-ui.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">     
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <header>
         <div id="header-div">
-
+            <h1>Weather Dashboard</h1>
         </div>
     </header>
     <main>
         <section id="search">
             <div id="search-current">
-                <h2>Search for a City:</h2>
-                <input id="search-inp">
-                <button id="search-btn">Search</button>
+                <h2 class="search-current-el">Search for a City:</h2>
+                <input id="search-inp" class="search-current-el">
+                <button id="search-btn" class="search-current-el">Search</button>
             </div>
             <div id="search-history">
             </div>
         </section>
         <section id="results">
             <div id="results-current">
-                <h2 id="current-header"></h2>
+                <h2 id="current-header">[City] [Date] [Icon]</h2>
                 <p id="current-temp" class="current-data">Temp:</p>
                 <p id="current-wind" class="current-data">Wind:</p>
                 <p id="current-humidity" class="current-data">Humidity:</p>
@@ -34,46 +37,49 @@
                 </div>
                 <div id="future-days">
                     <div id="day-1-card" class="future-card">
-                        <h6 id="day-1-header" class="fine-data"></h6>
-                        <h6 id="day-1-icon" class="fine-data"></h6>
+                        <h6 id="day-1-header" class="fine-data">[date]</h6>
+                        <h6 id="day-1-icon" class="fine-data">[icon]</h6>
                         <p id="day-1-temp" class="fine-data">Temp:</p>
                         <p id="day-1-wind" class="fine-data">Wind:</p>
                         <p id="day-1-humidity" class="fine-data">Humidity:</p>
                     </div>
                     <div id="day-2-card" class="future-card">
-                        <h6 id="day-2-header" class="fine-data"></h6>
-                        <h6 id="day-2-icon" class="fine-data"></h6>
+                        <h6 id="day-2-header" class="fine-data">[date]</h6>
+                        <h6 id="day-2-icon" class="fine-data">[icon]</h6>
                         <p id="day-2-temp" class="fine-data">Temp:</p>
                         <p id="day-2-wind" class="fine-data">Wind:</p>
                         <p id="day-2-humidity" class="fine-data">Humidity:</p>                        
                     </div>
                     <div id="day-3-card" class="future-card">
-                        <h6 id="day-3-header" class="fine-data"></h6>
-                        <h6 id="day-3-icon" class="fine-data"></h6>
+                        <h6 id="day-3-header" class="fine-data">[date]</h6>
+                        <h6 id="day-3-icon" class="fine-data">[icon]</h6>
                         <p id="day-3-temp" class="fine-data">Temp:</p>
                         <p id="day-3-wind" class="fine-data">Wind:</p>
-                        <p id="day-3-humidity" class="fine-data">Humidity:</p>
-                        
+                        <p id="day-3-humidity" class="fine-data">Humidity:</p>                        
                     </div>
                     <div id="day-4-card" class="future-card">
-                        <h6 id="day-4-header" class="fine-data"></h6>
-                        <h6 id="day-4-icon" class="fine-data"></h6>
+                        <h6 id="day-4-header" class="fine-data">[date]</h6>
+                        <h6 id="day-4-icon" class="fine-data">[icon]</h6>
                         <p id="day-4-temp" class="fine-data">Temp:</p>
                         <p id="day-4-wind" class="fine-data">Wind:</p>
-                        <p id="day-4-humidity" class="fine-data">Humidity:</p>
-                        
+                        <p id="day-4-humidity" class="fine-data">Humidity:</p>                        
                     </div>
                     <div id="day-5-card" class="future-card">
-                        <h6 id="day-5-header" class="fine-data"></h6>
-                        <h6 id="day-5-icon" class="fine-data"></h6>
+                        <h6 id="day-5-header" class="fine-data">[date]</h6>
+                        <h6 id="day-5-icon" class="fine-data">[icon]</h6>
                         <p id="day-5-temp" class="fine-data">Temp:</p>
                         <p id="day-5-wind" class="fine-data">Wind:</p>
-                        <p id="day-5-humidity" class="fine-data">Humidity:</p>
-                        
+                        <p id="day-5-humidity" class="fine-data">Humidity:</p>                        
                     </div>
                 </div>
             </div>
         </section>
-    </main>    
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script> 
 </body>
 </html>
