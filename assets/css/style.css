@@ -5,6 +5,7 @@
 
 button {
     margin: .25rem;
+    border-radius: .375rem;
 }
 
 main {
@@ -36,9 +37,16 @@ main {
 }
 
 #results-current {
+    border: 2px solid #AEAEAE;
+}
+
+#results-fine {
     display: flex;
     flex-direction: column;
-    border: 2px solid grey;
+}
+
+#search-btn {
+    background-color: #6991E3;
 }
 
 #search-current {
@@ -51,4 +59,10 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+#current-header-div {
+    display: flex;
+    flex-direction: row;
+}
+
 
