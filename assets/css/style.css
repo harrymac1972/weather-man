@@ -42,3 +42,9 @@ main {
     flex-direction: column;
     border-bottom: 2px solid grey;
 }
+
+#search-history {
+    display: flex;
+    flex-direction: column;
+}
+
