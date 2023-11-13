@@ -10,7 +10,7 @@ I learned from this project to remember to clear local storage as it may crash t
 
 I was more pragmatic on this challenge regarding dynamic content.  Much was just designed at the outset to be static in HTML and that worked out fine.
 
-Please note that I deliberately capped the history to ten entries.
+Please note that I deliberately capped the history to fifteen entries.
 ## Installation   
 
 Application - <a href="https://harrymac1972.github.io/weather-man/" style="font-weight:bolder;">Weather Man</a>

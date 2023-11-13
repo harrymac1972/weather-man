@@ -31,7 +31,7 @@ function cityFound(cityStr,searchedArr,data) {
 }
 
 function cropHistory(searchedArr) {
-    while (searchedArr.length > 10) {
+    while (searchedArr.length > 15) {
         searchedArr.pop();
     }
     return searchedArr;
