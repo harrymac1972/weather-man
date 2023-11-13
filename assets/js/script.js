@@ -1,5 +1,9 @@
 
-var searchedArr = [];
+var searchedArr = getStoredHistory();
+if (localStorage.getItem("cityHistory") === null) {
+    searchedArr = ["Toronto"];
+    renderHistory(searchedArr);
+}
 
 function _init() {
     var historyArr = getStoredHistory();
@@ -10,15 +14,6 @@ function _init() {
         searchCity(historyArr[0]);
     }
 }
-
-
-
-
-// if (localStorage.getItem(keyToCheck) === null) {
-//     console.log(`The key '${keyToCheck}' is not present in local storage`);
-//   } else {
-//     console.log(`The key '${keyToCheck}' is present in local storage`);
-//   }
 
 function cityFound(cityStr,searchedArr,data) {
     renderCurrentHeader(data);
@@ -154,7 +149,6 @@ function searchCity(cityStr) {
             method: "GET",
             dataType: "json",
             success: function(data) {
-                console.log(searchedArr);
                 cityFound(cityStr,searchedArr,data);
             },
             error: function() {
