@@ -4,7 +4,7 @@
 
 The intent of this project is to have a weather app to check the climate of various cities.
 
-The user can search common cities with presents the current and five day forecast.
+The user can search common cities which presents the current and five day forecast.
 
 I learned from this project to remember to clear local storage as it may crash the app on a fresh start-up after coding was thought to be done.
 
