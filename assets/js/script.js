@@ -3,6 +3,7 @@ var searchedArr = [];
 
 $("#search-btn").on("click",function() {
     var textStr = $("#search-inp").val();
+    textStr = toTitleCase(textStr);
     if (textStr.length > 0){
         var urlString = "https://api.openweathermap.org/data/2.5/weather?q=";
         urlString += textStr;
@@ -15,7 +16,7 @@ $("#search-btn").on("click",function() {
                 console.log(data);
                 cityFound(textStr,searchedArr,data);
             },
-            error: function(xhr, status, error) {
+            error: function() {
                 alert("City Not Found!");
             }
         })
@@ -24,6 +25,12 @@ $("#search-btn").on("click",function() {
 
 function cityFound(textStr,searchedArr,data) {
     renderCurrentHeader(data);
+    var v = "Temp: " + data.main.temp + '\u00B0C';
+    $("#current-temp").text(v);
+    var v = "Wind: " + data.wind.speed + ' km/h';
+    $("#current-wind").text(v);
+    var v = "Humidity: " + data.main.humidity + ' %';
+    $("#current-humidity").text(v);
     if (!searchedArr.includes(textStr)) {
         searchedArr.unshift(textStr);
         renderHistory(searchedArr);
@@ -55,4 +62,8 @@ function renderHistory(searchedArr) {
         cityBtn.text(searchedArr[i]);
         historyDiv.append(cityBtn);
     }
+}
+
+function toTitleCase(textStr) {
+    return textStr.charAt(0).toUpperCase() + textStr.slice(1);
 }
